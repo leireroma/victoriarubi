@@ -1,2417 +1,408 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<meta
-			name="description"
-			content="Victoria Rubí Bonet, Psicóloga General Sanitaria colegiada B-03752. Terapia psicológica basada en TCC, ACT y trauma."
-		/>
+	<meta
+		name="description"
+		content="Victoria Rubí Bonet, Psicóloga General Sanitaria colegiada B-03752. Terapia psicológica basada en TCC, ACT y trauma."
+	/>
 
-		<title>Victoria Rubí Bonet | Psicóloga Sanitaria</title>
+	<title>Victoria Rubí Bonet | Psicóloga Sanitaria</title>
 
-		<!-- ===== BOX ICONS ===== -->
-		<link
-			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-			rel="stylesheet"
-		/>
+	<!-- ===== BOX ICONS ===== -->
+	<link
+		href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+		rel="stylesheet"
+	/>
 
-		<!-- ===== Favicon ===== -->
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="/icons/favicon.ico/apple-touch-icon.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="/icons/favicon.ico/favicon-32x32.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="/icons/favicon.ico/favicon-16x16.png"
-		/>
+	<!-- ===== FAVICON ===== -->
+	<link
+		rel="apple-touch-icon"
+		sizes="180x180"
+		href="/icons/favicon.ico/apple-touch-icon.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="32x32"
+		href="/icons/favicon.ico/favicon-32x32.png"
+	/>
+	<link
+		rel="icon"
+		type="image/png"
+		sizes="16x16"
+		href="/icons/favicon.ico/favicon-16x16.png"
+	/>
 
-		<!-- ===== IMPORTANT: KEEP YOUR ORIGINAL CSS ===== -->
-		<link rel="stylesheet" href="css/styles.css" />
+	<!-- ===== ORIGINAL SAVANNA CSS ===== -->
+	<link rel="stylesheet" href="css/styles.css" />
 
-		<style>
-			/*
-				ONLY small additions for Victoria-specific buttons/reviews/form.
-				The original site colors, typography and layout still come
-				from css/styles.css.
-			*/
+	<style>
 
-			.home__buttons {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 1rem;
-				justify-content: center;
-				margin-top: 1.5rem;
+		/* =========================================================
+		   SMALL ADDITIONS — ORIGINAL CSS STILL CONTROLS MAIN DESIGN
+		========================================================= */
+
+		.home__social--badges {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
+			gap: 1.25rem;
+			margin-top: 1.75rem;
+		}
+
+		.professional-badge {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-decoration: none;
+			transition: transform 0.25s ease, box-shadow 0.25s ease;
+		}
+
+		.professional-badge:hover {
+			transform: translateY(-3px);
+		}
+
+		/* Instagram badge — same idea as original LinkedIn badge */
+
+		.instagram-badge {
+			min-width: 290px;
+			height: 95px;
+			padding: 0 2.7rem;
+			border-radius: 18px;
+			background: #1686c4;
+			color: #fff;
+			font-size: 1.8rem;
+			font-weight: 700;
+			gap: 1rem;
+			box-shadow: 0 5px 10px rgba(0,0,0,.15);
+		}
+
+		.instagram-badge i {
+			font-size: 2.4rem;
+		}
+
+		/* MundoPsicologos badge */
+
+		.mundo-badge {
+			height: 100px;
+		}
+
+		.mundo-badge img {
+			display: block;
+			height: 100px;
+			width: auto;
+			max-width: 370px;
+			object-fit: contain;
+			filter: drop-shadow(0 5px 5px rgba(0,0,0,.15));
+		}
+
+		/* Big contact button like Savanna */
+
+		.home__contact-button {
+			display: flex;
+			justify-content: center;
+			margin-top: 6rem;
+		}
+
+		.home__button--large {
+			min-width: 400px;
+			padding: 1.8rem 3rem;
+			text-align: center;
+			font-size: 1.8rem;
+			font-weight: 700;
+			border-radius: 16px;
+		}
+
+		.review__stars {
+			font-size: 1.25rem;
+			letter-spacing: .05rem;
+			margin-bottom: .5rem;
+		}
+
+		.review__verified {
+			font-size: .85rem;
+			opacity: .75;
+			margin-bottom: .8rem;
+		}
+
+		.review__date {
+			font-size: .8rem;
+			opacity: .65;
+			margin-top: 1rem;
+		}
+
+		.booking-box {
+			text-align: center;
+			margin-top: 2rem;
+		}
+
+		/* Consultation form */
+
+		.consulta-form {
+			display: grid;
+			gap: 1.25rem;
+			margin-top: 2rem;
+		}
+
+		.consulta-field {
+			display: grid;
+			gap: .5rem;
+		}
+
+		.consulta-field label {
+			font-weight: 600;
+		}
+
+		.consulta-field input,
+		.consulta-field textarea,
+		.consulta-field select {
+			width: 100%;
+			padding: .9rem 1rem;
+			border: 1px solid rgba(0,0,0,.15);
+			border-radius: .35rem;
+			font-family: inherit;
+			font-size: 1rem;
+			background: rgba(255,255,255,.8);
+		}
+
+		.consulta-field textarea {
+			min-height: 130px;
+			resize: vertical;
+		}
+
+		.consulta-consent {
+			display: flex;
+			gap: .7rem;
+			align-items: flex-start;
+		}
+
+		.consulta-consent input {
+			margin-top: .25rem;
+		}
+
+		#consulta {
+			display: none;
+		}
+
+		#consulta.consulta-visible {
+			display: block;
+		}
+
+		@media screen and (max-width: 768px) {
+
+			.home__social--badges {
+				flex-direction: column;
 			}
 
-			.review__stars {
-				font-size: 1.25rem;
-				letter-spacing: 0.05rem;
-				margin-bottom: 0.5rem;
+			.instagram-badge {
+				min-width: 270px;
+				height: 80px;
+				font-size: 1.45rem;
 			}
 
-			.review__name {
-				font-weight: 700;
-				margin-bottom: 0.2rem;
+			.mundo-badge {
+				height: 85px;
 			}
 
-			.review__verified {
-				font-size: 0.85rem;
-				opacity: 0.75;
-				margin-bottom: 0.8rem;
+			.mundo-badge img {
+				height: 85px;
+				max-width: 300px;
 			}
 
-			.review__date {
-				font-size: 0.8rem;
-				opacity: 0.65;
-				margin-top: 1rem;
+			.home__contact-button {
+				margin-top: 3rem;
 			}
 
-			.consulta-form {
-				display: grid;
-				gap: 1.25rem;
-				margin-top: 2rem;
-			}
-
-			.consulta-field {
-				display: grid;
-				gap: 0.5rem;
-			}
-
-			.consulta-field label {
-				font-weight: 600;
-			}
-
-			.consulta-field input,
-			.consulta-field textarea,
-			.consulta-field select {
-				width: 100%;
-				padding: 0.9rem 1rem;
-				border: 1px solid rgba(0, 0, 0, 0.15);
-				border-radius: 0.35rem;
-				font-family: inherit;
-				font-size: 1rem;
-				background: rgba(255, 255, 255, 0.8);
-			}
-
-			.consulta-field textarea {
-				min-height: 130px;
-				resize: vertical;
-			}
-
-			.consulta-consent {
-				display: flex;
-				gap: 0.7rem;
-				align-items: flex-start;
-			}
-
-			.consulta-consent input {
-				margin-top: 0.25rem;
-			}
-
-			#consulta {
-				display: none;
-			}
-
-			#consulta.consulta-visible {
-				display: block;
-			}
-
-			.booking-box {
-				text-align: center;
-				margin-top: 2rem;
-			}
-
-			.instagram-link {
-				display: inline-flex;
-				align-items: center;
-				gap: 0.5rem;
-			}
-
-			.instagram-link i {
+			.home__button--large {
+				min-width: 270px;
+				width: 85%;
 				font-size: 1.4rem;
 			}
-		</style>
-	</head>
+		}
 
-	<body>
+	</style>
+</head>
 
-		<!-- ===== SKIP LINK ===== -->
-		<a href="#main-content" class="skip-link">
-			Ir al contenido principal
-		</a>
+<body>
 
-		<!-- =========================================================
-							HEADER / NAVIGATION
-		========================================================= -->
+	<a href="#main-content" class="skip-link">
+		Ir al contenido principal
+	</a>
 
-		<header class="header" id="header">
 
-			<nav class="nav container" aria-label="Navegación principal">
+	<!-- =========================================================
+	     HEADER
+	========================================================= -->
 
-				<a href="#home" class="nav__logo">
-					Victoria Rubí
-					<span class="nav__logo-credential">Psicóloga</span>
-				</a>
+	<header class="header" id="header">
+
+		<nav class="nav container" aria-label="Navegación principal">
+
+			<a href="#home" class="nav__logo">
+				Victoria Rubí
+				<span class="nav__logo-credential">Psicóloga</span>
+			</a>
+
+			<button
+				class="nav__toggle"
+				id="nav-toggle"
+				aria-label="Abrir menú"
+				aria-expanded="false"
+				aria-controls="nav-menu"
+			>
+				<i class="bx bx-menu"></i>
+			</button>
+
+			<div class="nav__menu" id="nav-menu">
+
+				<ul class="nav__list">
+
+					<li class="nav__item">
+						<a href="#home" class="nav__link active">
+							Inicio
+						</a>
+					</li>
+
+					<li class="nav__item">
+						<a href="#about" class="nav__link">
+							Sobre mí
+						</a>
+					</li>
+
+					<li class="nav__item">
+						<a href="#experience" class="nav__link">
+							Formación
+						</a>
+					</li>
+
+					<li class="nav__item">
+						<a href="#services" class="nav__link">
+							Terapia
+						</a>
+					</li>
+
+					<li class="nav__item">
+						<a href="#opiniones" class="nav__link">
+							Opiniones
+						</a>
+					</li>
+
+					<li class="nav__item">
+						<a href="#contact" class="nav__link">
+							Contacto
+						</a>
+					</li>
+
+				</ul>
 
 				<button
-					class="nav__toggle"
-					id="nav-toggle"
-					aria-label="Abrir menú"
-					aria-expanded="false"
-					aria-controls="nav-menu"
+					class="nav__close"
+					id="nav-close"
+					aria-label="Cerrar menú"
 				>
-					<i class="bx bx-menu" aria-hidden="true"></i>
+					<i class="bx bx-x"></i>
 				</button>
 
-				<div class="nav__menu" id="nav-menu" role="navigation">
-
-					<ul class="nav__list">
-
-						<li class="nav__item">
-							<a href="#home" class="nav__link active">
-								Inicio
-							</a>
-						</li>
-
-						<li class="nav__item">
-							<a href="#about" class="nav__link">
-								Sobre mí
-							</a>
-						</li>
-
-						<li class="nav__item">
-							<a href="#experience" class="nav__link">
-								Formación
-							</a>
-						</li>
-
-						<li class="nav__item">
-							<a href="#services" class="nav__link">
-								Terapia
-							</a>
-						</li>
-
-						<li class="nav__item">
-							<a href="#opiniones" class="nav__link">
-								Opiniones
-							</a>
-						</li>
-
-						<li class="nav__item">
-							<a href="#contact" class="nav__link">
-								Contacto
-							</a>
-						</li>
-
-					</ul>
-
-					<button
-						class="nav__close"
-						id="nav-close"
-						aria-label="Cerrar menú"
-					>
-						<i class="bx bx-x" aria-hidden="true"></i>
-					</button>
-
-				</div>
-
-				<div class="nav__overlay" id="nav-overlay"></div>
-
-			</nav>
-
-		</header>
-
-
-		<main class="main" id="main-content">
-
-			<!-- =========================================================
-								HOME / HERO
-			========================================================= -->
-
-			<section
-				class="home"
-				id="home"
-				aria-label="Presentación"
-			>
-
-				<div class="home__container container">
-
-					<div class="home__data">
-
-						<div class="home__img">
-
-							<!--
-								UPLOAD VICTORIA'S PHOTO TO:
-								images/victoria-rubi.png
-							-->
-
-							<img
-								src="images/victoria-rubi.png"
-								alt="Victoria Rubí Bonet, Psicóloga Sanitaria"
-								width="200"
-								height="200"
-								loading="eager"
-							/>
-
-						</div>
-
-
-						<h1 class="home__title">
-
-							Victoria Rubí Bonet
-
-							<br />
-
-							Psicóloga Sanitaria
-
-						</h1>
-
-
-						<p class="home__profession">
-
-							Colegiada B-03752
-
-						</p>
-
-
-						<p
-							class="home__profession"
-							style="max-width: 620px; margin-left: auto; margin-right: auto;"
-						>
-
-							Te ayudo a que seas tú y no el miedo
-							quien dirija tu vida.
-
-						</p>
-
-
-						<div class="home__social">
-
-							<a
-								href="https://www.instagram.com/victoriarubi.psicologa/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="home__social-link instagram-link"
-								aria-label="Instagram de Victoria Rubí Psicóloga"
-							>
-
-								<i
-									class="bx bxl-instagram"
-									aria-hidden="true"
-								></i>
-
-								Instagram
-
-							</a>
-
-						</div>
-
-
-						<div class="home__buttons">
-
-							<a
-								href="#consulta"
-								class="button home__button"
-								onclick="mostrarConsulta(event)"
-							>
-
-								Consulta Psicología
-
-							</a>
-
-
-							<a
-								href="https://company.eholo.health/en/centros/victoriarub%C3%ADpsic%C3%B3loga/vrubbon?fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAadM7MSNtq6C4DEFdwywlmlwale7effNWsDUBvfapMHGmob6nHmRRZfQk0CKPA_aem_ThUkLXpZ3jZBL1kVL4AcRw&utm_content=link_in_bio&utm_medium=social&utm_source=ig"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="button home__button"
-							>
-
-								Reservar y pagar
-
-							</a>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</section>
-
-
-			<!-- =========================================================
-								SOBRE MÍ
-			========================================================= -->
-
-			<section
-				class="about section"
-				id="about"
-				aria-label="Sobre Victoria Rubí Bonet"
-			>
-
-				<h2 class="section-title">
-					Sobre mí
-				</h2>
-
-
-				<div class="about__container container">
-
-
-					<div class="about__data">
-
-						<p class="about__description">
-
-							Soy <strong>Victoria Rubí Bonet</strong>,
-							Psicóloga General Sanitaria, colegiada
-							<strong>B-03752</strong>.
-
-						</p>
-
-
-						<p class="about__description">
-
-							Mi objetivo es acompañarte a entender lo que
-							te está ocurriendo y ayudarte a desarrollar
-							herramientas que te permitan relacionarte de
-							otra manera con tus pensamientos, emociones
-							y experiencias.
-
-						</p>
-
-
-						<p class="about__description">
-
-							Trabajo principalmente desde la
-							<strong>Terapia Cognitivo Conductual (TCC)</strong>
-							y la
-							<strong>Terapia de Aceptación y Compromiso (ACT)</strong>,
-							integrando también formación específica en
-							<strong>trauma</strong>.
-
-						</p>
-
-
-						<p class="about__description">
-
-							En terapia buscaremos crear un espacio seguro,
-							cercano y libre de juicios en el que puedas
-							comprenderte mejor, afrontar aquello que hoy
-							te limita y avanzar hacia una vida más
-							alineada contigo.
-
-						</p>
-
-
-						<p class="about__description">
-
-							<strong>
-								El primer paso ya es el inicio del cambio.
-							</strong>
-
-						</p>
-
-					</div>
-
-
-					<div class="about__info">
-
-						<h3 class="about__info-title">
-							Información
-						</h3>
-
-
-						<div class="about__info-data">
-
-							<i
-								class="bx bx-user about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<span class="about__info-subtitle">
-
-								Victoria Rubí Bonet
-
-							</span>
-
-						</div>
-
-
-						<div class="about__info-data">
-
-							<i
-								class="bx bxs-briefcase-alt about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<div>
-
-								<span class="about__info-subtitle">
-
-									Psicóloga General Sanitaria
-
-								</span>
-
-								<span class="about__info-subtitle-small">
-
-									Psicología clínica y sanitaria
-
-								</span>
-
-							</div>
-
-						</div>
-
-
-						<div class="about__info-data">
-
-							<i
-								class="bx bx-id-card about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<ul class="about__info-list">
-
-								<li class="about__info-subtitle">
-
-									Col. B-03752
-
-								</li>
-
-								<li class="about__info-subtitle-small">
-
-									Colegio Oficial de Psicología
-
-								</li>
-
-							</ul>
-
-						</div>
-
-
-						<div class="about__info-data">
-
-							<i
-								class="bx bx-brain about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<ul>
-
-								<li class="about__info-subtitle">
-
-									TCC · ACT · Trauma
-
-								</li>
-
-								<li class="about__info-subtitle-small">
-
-									Intervención basada en evidencia
-
-								</li>
-
-							</ul>
-
-						</div>
-
-
-						<div class="about__info-data">
-
-							<i
-								class="bx bxl-instagram about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<a
-								class="about__info-subtitle"
-								href="https://www.instagram.com/victoriarubi.psicologa/"
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-
-								@victoriarubi.psicologa
-
-							</a>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</section>
-
-
-
-			<!-- ===== SAME IMAGE DIVIDER STYLE AS ORIGINAL ===== -->
-
-			<div class="img-section">
-
-				<img
-					src="images/floral-pastel.webp"
-					alt="Ilustración floral decorativa"
-					loading="lazy"
-				/>
-
 			</div>
 
+			<div class="nav__overlay" id="nav-overlay"></div>
 
+		</nav>
 
-			<!-- =========================================================
-						ESPECIALIDADES / FORMA DE TRABAJO
-			========================================================= -->
+	</header>
 
-			<section
-				class="special__approach section"
-				aria-label="Especialidades y enfoque terapéutico"
-			>
 
+	<main class="main" id="main-content">
 
-				<div class="insurance-mode__group grid">
 
-					<div class="mode grid">
+		<!-- =========================================================
+		     HERO — PRESERVES SAVANNA-STYLE LAYOUT
+		========================================================= -->
 
-						<h3 class="about__info-title">
-							Modalidad
-						</h3>
+		<section class="home" id="home">
 
+			<div class="home__container container">
 
-						<div class="about__info-data">
+				<div class="home__data">
 
-							<i
-								class="bx bx-user about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<ul>
-
-								<li class="about__info-subtitle">
-									Terapia individual
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Adultos
-								</li>
-
-							</ul>
-
-						</div>
-
-
-						<div class="about__info-data">
-
-							<i
-								class="bx bx-laptop about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<ul>
-
-								<li class="about__info-subtitle">
-									Sesiones
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Consulta psicológica
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Consulta online según disponibilidad
-								</li>
-
-							</ul>
-
-						</div>
-
-					</div>
-
-				</div>
-
-
-
-				<h3 class="about__info-title">
-					Áreas de trabajo
-				</h3>
-
-
-				<div class="specialties__group grid">
-
-
-					<div class="spec-1 grid">
-
-
-						<div class="about__info-data">
-
-							<i
-								class="bx bx-tired about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<ul class="about__info-list">
-
-								<li class="about__info-subtitle">
-									Ansiedad
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Miedos
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Pánico
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Fobias
-								</li>
-
-							</ul>
-
-						</div>
-
-
-
-						<div class="about__info-data">
-
-							<i
-								class="bx bxs-brain about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<ul class="about__info-list">
-
-								<li class="about__info-subtitle">
-									TOC
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Pensamientos obsesivos
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Conductas compulsivas
-								</li>
-
-							</ul>
-
-						</div>
-
-
-						<div class="about__info-data">
-
-							<i
-								class="bx bx-shield-quarter about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<ul class="about__info-list">
-
-								<li class="about__info-subtitle">
-									Trauma
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Procesamiento emocional
-								</li>
-
-								<li class="about__info-subtitle-small">
-									EMDR
-								</li>
-
-							</ul>
-
-						</div>
-
-					</div>
-
-
-					<div class="spec-2 grid">
-
-
-						<div class="about__info-data">
-
-							<i
-								class="bx bx-heart-circle about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<ul class="about__info-list">
-
-								<li class="about__info-subtitle">
-									Gestión emocional
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Regulación emocional
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Autoestima
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Relaciones
-								</li>
-
-							</ul>
-
-						</div>
-
-
-						<div class="about__info-data">
-
-							<i
-								class="bx bx-conversation about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<ul class="about__info-list">
-
-								<li class="about__info-subtitle">
-									Habilidades sociales
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Comunicación
-								</li>
-
-								<li class="about__info-subtitle-small">
-									Límites
-								</li>
-
-							</ul>
-
-						</div>
-
-					</div>
-
-				</div>
-
-
-
-				<h3 class="about__info-title">
-					Enfoque terapéutico
-				</h3>
-
-
-				<div class="approach__group grid">
-
-
-					<div class="about__info-data">
-
-						<i
-							class="bx bx-universal-access about__info-icon"
-							aria-hidden="true"
-						></i>
-
-						<ul class="about__info-list">
-
-							<li class="about__info-subtitle">
-
-								Terapia Cognitivo Conductual
-
-							</li>
-
-							<li class="about__info-subtitle-small">
-
-								TCC
-
-							</li>
-
-						</ul>
-
-					</div>
-
-
-					<div class="about__info-data">
-
-						<i
-							class="bx bx-leaf about__info-icon"
-							aria-hidden="true"
-						></i>
-
-						<ul class="about__info-list">
-
-							<li class="about__info-subtitle">
-
-								Aceptación y Compromiso
-
-							</li>
-
-							<li class="about__info-subtitle-small">
-
-								ACT
-
-							</li>
-
-						</ul>
-
-					</div>
-
-
-					<div class="about__info-data">
-
-						<i
-							class="bx bx-band-aid about__info-icon"
-							aria-hidden="true"
-						></i>
-
-						<ul class="about__info-list">
-
-							<li class="about__info-subtitle">
-
-								Trauma
-
-							</li>
-
-						</ul>
-
-					</div>
-
-
-					<div class="about__info-data">
-
-						<i
-							class="bx bx-heart about__info-icon"
-							aria-hidden="true"
-						></i>
-
-						<ul class="about__info-list">
-
-							<li class="about__info-subtitle">
-
-								Acompañamiento cercano
-
-							</li>
-
-						</ul>
-
-					</div>
-
-				</div>
-
-			</section>
-
-
-
-			<!-- ===== IMAGE DIVIDER ===== -->
-
-			<div class="img-section">
-
-				<img
-					src="images/lesly-juarez-DFtjXYd5Pto-unsplash.jpg"
-					alt="Imagen decorativa sobre bienestar"
-					loading="lazy"
-				/>
-
-			</div>
-
-
-
-			<!-- =========================================================
-								FORMACIÓN
-			========================================================= -->
-
-			<section
-				class="experience section"
-				id="experience"
-				aria-label="Formación de Victoria Rubí Bonet"
-			>
-
-
-				<div class="exp__container grid">
-
-					<h2 class="section-title">
-						Títulos universitarios
-					</h2>
-
-
-					<!-- PSICOLOGÍA -->
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Grado
-							</h3>
-
-							<span class="exp__organization">
-
-								Universitat Oberta de Catalunya
-
-							</span>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-							<span class="exp__line"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Grado en Psicología
-
-							</h3>
-
-							<span class="exp__specialty">
-
-								Mención en Psicología de la Salud
-
-							</span>
-
-							<span class="exp__specialty">
-
-								Mención en Evaluación e Intervención Clínica
-
-							</span>
-
-						</div>
-
-					</div>
-
-
-
-					<!-- MÁSTER -->
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Máster
-							</h3>
-
-							<span class="exp__organization">
-
-								Universitat Internacional Valenciana
-
-							</span>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-							<span class="exp__line"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Psicología General Sanitaria
-
-							</h3>
-
-						</div>
-
-					</div>
-
-
-
-					<!-- TRAUMA -->
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Experto Universitario
-							</h3>
-
-							<span class="exp__organization">
-
-								Universidad Internacional de La Rioja
-
-							</span>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-							<span class="exp__line"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Trauma y EMDR
-
-							</h3>
-
-						</div>
-
-					</div>
-
-
-
-					<!-- SANIDAD -->
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Diploma
-							</h3>
-
-							<span class="exp__organization">
-
-								Escuela Nacional de Sanidad
-
-							</span>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-							<span class="exp__line"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Diploma en Sanidad
-
-							</h3>
-
-							<span class="exp__specialty">
-
-								Instituto de Salud Carlos III
-
-							</span>
-
-						</div>
-
-					</div>
-
-
-
-					<!-- FARMACIA -->
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Licenciatura
-							</h3>
-
-							<span class="exp__organization">
-
-								Universidad de Navarra
-
-							</span>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Licenciatura en Farmacia
-
-							</h3>
-
-						</div>
-
-					</div>
-
-				</div>
-
-
-
-				<!-- ===== OTRAS FORMACIONES ===== -->
-
-				<div class="exp__container grid">
-
-					<h2 class="section-title">
-						Otras formaciones
-					</h2>
-
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Formación continua
-							</h3>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-							<span class="exp__line"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Miedo, pánico y fobias
-
-							</h3>
-
-							<span class="exp__specialty">
-
-								Terapia breve estratégica de Giorgio Nardone
-								(UOC)
-
-							</span>
-
-						</div>
-
-					</div>
-
-
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Formación continua
-							</h3>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-							<span class="exp__line"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Entrenamiento emocional
-
-							</h3>
-
-							<span class="exp__specialty">
-
-								Inteligencia emocional (UOC)
-
-							</span>
-
-						</div>
-
-					</div>
-
-
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Formación
-							</h3>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-							<span class="exp__line"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Habilidades sociales
-
-							</h3>
-
-						</div>
-
-					</div>
-
-
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Formación
-							</h3>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-							<span class="exp__line"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Tratamiento del trastorno
-								obsesivo-compulsivo
-
-							</h3>
-
-						</div>
-
-					</div>
-
-
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Formación
-							</h3>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-							<span class="exp__line"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Modelo PARCUVE
-
-							</h3>
-
-							<span class="exp__specialty">
-
-								Tratamiento del trauma
-
-							</span>
-
-						</div>
-
-					</div>
-
-
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Formación
-							</h3>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-							<span class="exp__line"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Terapia de Esquemas
-
-							</h3>
-
-						</div>
-
-					</div>
-
-
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Formación
-							</h3>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-							<span class="exp__line"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Terapia Dialéctica Conductual
-
-							</h3>
-
-						</div>
-
-					</div>
-
-
-
-					<div class="exp__content">
-
-						<div>
-
-							<h3 class="exp__year">
-								Formación
-							</h3>
-
-						</div>
-
-
-						<div class="exp__time">
-
-							<span class="exp__rounder"></span>
-
-						</div>
-
-
-						<div>
-
-							<h3 class="exp__position">
-
-								Terapia Cognitiva
-
-							</h3>
-
-							<span class="exp__specialty">
-
-								Formación y actualización continua
-
-							</span>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</section>
-
-
-
-			<!-- =========================================================
-								TERAPIA / SERVICES
-			========================================================= -->
-
-			<section
-				class="services section"
-				id="services"
-				aria-label="Terapia"
-			>
-
-				<h2 class="section-title">
-					Terapia
-				</h2>
-
-
-				<div class="services__container grid">
-
-
-					<!-- TCC -->
-
-					<div class="services__content">
-
-						<div class="services__header">
-
-							<i
-								class="bx bx-brain services__icon"
-								aria-hidden="true"
-							></i>
-
-							<h3 class="services__title">
-
-								Terapia Cognitivo Conductual
-
-							</h3>
-
-						</div>
-
-
-						<div class="services__body">
-
-							<p class="services__description">
-
-								La Terapia Cognitivo Conductual
-								(TCC) parte de la relación entre
-								nuestros pensamientos, emociones
-								y comportamientos.
-
-							</p>
-
-
-							<p class="services__description">
-
-								A través del proceso terapéutico
-								podemos identificar patrones que
-								están generando malestar y aprender
-								nuevas estrategias para relacionarnos
-								con ellos de una forma más útil.
-
-							</p>
-
-						</div>
-
-
-						<button
-							class="services__toggle"
-							aria-expanded="false"
-							aria-label="Mostrar información sobre TCC"
-						>
-
-							<i
-								class="bx bx-chevron-down services__chevron"
-								aria-hidden="true"
-							></i>
-
-						</button>
-
-					</div>
-
-
-
-					<!-- ACT -->
-
-					<div class="services__content">
-
-						<div class="services__header">
-
-							<i
-								class="bx bx-leaf services__icon"
-								aria-hidden="true"
-							></i>
-
-							<h3 class="services__title">
-
-								Terapia de Aceptación y Compromiso
-
-							</h3>
-
-						</div>
-
-
-						<div class="services__body">
-
-							<p class="services__description">
-
-								La Terapia de Aceptación y Compromiso
-								(ACT) busca ayudarte a construir una
-								vida guiada por aquello que de verdad
-								es importante para ti.
-
-							</p>
-
-
-							<p class="services__description">
-
-								No se trata de eliminar todas las
-								emociones difíciles, sino de aprender
-								a relacionarnos con ellas sin permitir
-								que sean quienes decidan por nosotros.
-
-							</p>
-
-						</div>
-
-
-						<button
-							class="services__toggle"
-							aria-expanded="false"
-							aria-label="Mostrar información sobre ACT"
-						>
-
-							<i
-								class="bx bx-chevron-down services__chevron"
-								aria-hidden="true"
-							></i>
-
-						</button>
-
-					</div>
-
-
-
-					<!-- ANSIEDAD -->
-
-					<div class="services__content">
-
-						<div class="services__header">
-
-							<i
-								class="bx bx-tired services__icon"
-								aria-hidden="true"
-							></i>
-
-							<h3 class="services__title">
-
-								Ansiedad, miedo y pánico
-
-							</h3>
-
-						</div>
-
-
-						<div class="services__body">
-
-							<p class="services__description">
-
-								A veces intentamos evitar tanto el miedo
-								que acaba teniendo cada vez más espacio
-								en nuestra vida.
-
-							</p>
-
-
-							<p class="services__description">
-
-								En terapia trabajaremos para comprender
-								qué está manteniendo la ansiedad y para
-								recuperar progresivamente la capacidad
-								de decidir cómo quieres vivir.
-
-							</p>
-
-						</div>
-
-
-						<button
-							class="services__toggle"
-							aria-expanded="false"
-							aria-label="Mostrar información sobre ansiedad"
-						>
-
-							<i
-								class="bx bx-chevron-down services__chevron"
-								aria-hidden="true"
-							></i>
-
-						</button>
-
-					</div>
-
-
-
-					<!-- TRAUMA -->
-
-					<div class="services__content">
-
-						<div class="services__header">
-
-							<i
-								class="bx bx-band-aid services__icon"
-								aria-hidden="true"
-							></i>
-
-							<h3 class="services__title">
-
-								Trauma
-
-							</h3>
-
-						</div>
-
-
-						<div class="services__body">
-
-							<p class="services__description">
-
-								Algunas experiencias dejan una huella
-								que continúa influyendo en cómo nos
-								sentimos, reaccionamos o nos relacionamos
-								en el presente.
-
-							</p>
-
-
-							<p class="services__description">
-
-								El trabajo terapéutico permite abordar
-								estas experiencias de forma progresiva,
-								segura y adaptada a cada persona.
-
-							</p>
-
-						</div>
-
-
-						<button
-							class="services__toggle"
-							aria-expanded="false"
-							aria-label="Mostrar información sobre trauma"
-						>
-
-							<i
-								class="bx bx-chevron-down services__chevron"
-								aria-hidden="true"
-							></i>
-
-						</button>
-
-					</div>
-
-				</div>
-
-			</section>
-
-
-
-			<!-- ===== SAME PASTEL DIVIDER ===== -->
-
-			<div class="img-section">
-
-				<img
-					src="images/floral-pastel.webp"
-					alt="Decoración floral"
-					loading="lazy"
-				/>
-
-			</div>
-
-
-
-			<!-- =========================================================
-								OPINIONES
-			========================================================= -->
-
-			<section
-				class="services section"
-				id="opiniones"
-				aria-label="Opiniones de pacientes"
-			>
-
-				<h2 class="section-title">
-					Opiniones
-				</h2>
-
-
-				<div class="services__container grid">
-
-
-					<!-- PAU -->
-
-					<div class="services__content">
-
-						<div class="services__header">
-
-							<i
-								class="bx bx-message-rounded-dots services__icon"
-								aria-hidden="true"
-							></i>
-
-							<h3 class="services__title">
-								Pau
-							</h3>
-
-						</div>
-
-
-						<div class="services__body">
-
-							<p class="review__stars">
-								★★★★★
-							</p>
-
-							<p class="review__verified">
-								Paciente verificado
-							</p>
-
-							<p class="services__description">
-
-								“Victoria me ha ayudado enormemente
-								a afrontar una situación familiar
-								muy difícil. Estoy muy agradecido
-								por su trato y profesionalidad.
-								Una gran profesional.”
-
-							</p>
-
-							<p class="review__date">
-
-								26 agosto 2026
-
-							</p>
-
-						</div>
-
-					</div>
-
-
-
-					<!-- LOLA -->
-
-					<div class="services__content">
-
-						<div class="services__header">
-
-							<i
-								class="bx bx-message-rounded-dots services__icon"
-								aria-hidden="true"
-							></i>
-
-							<h3 class="services__title">
-								Lola
-							</h3>
-
-						</div>
-
-
-						<div class="services__body">
-
-							<p class="review__stars">
-								★★★★★
-							</p>
-
-							<p class="review__verified">
-								Paciente verificado
-							</p>
-
-							<p class="services__description">
-
-								“Victoria es una gran psicóloga.
-								Desde el día 0 conecté con ella y
-								ha sabido acompañarme a lo largo
-								de todo el camino de mi tratamiento.
-								Sin duda una gran profesional.”
-
-							</p>
-
-							<p class="review__date">
-
-								21 agosto 2026
-
-							</p>
-
-						</div>
-
-					</div>
-
-
-
-					<!-- IGNACIO -->
-
-					<div class="services__content">
-
-						<div class="services__header">
-
-							<i
-								class="bx bx-message-rounded-dots services__icon"
-								aria-hidden="true"
-							></i>
-
-							<h3 class="services__title">
-								Ignacio
-							</h3>
-
-						</div>
-
-
-						<div class="services__body">
-
-							<p class="review__stars">
-								★★★★★
-							</p>
-
-							<p class="review__verified">
-								Paciente verificado
-							</p>
-
-							<p class="services__description">
-
-								“Victoria es una gran profesional,
-								cercana, cálida y muy fácil de tratar.
-								Me ha ayudado mucho y desde el primer
-								momento transmite confianza y te hace
-								sentir escuchado y acompañado.”
-
-							</p>
-
-							<p class="review__date">
-
-								21 agosto 2026
-
-							</p>
-
-						</div>
-
-					</div>
-
-				</div>
-
-
-				<div class="booking-box">
-
-					<a
-						href="https://www.mundopsicologos.com/procard/maria-victoria-rubi-bonet"
-						target="_blank"
-						rel="noopener noreferrer"
-						class="button"
-					>
-
-						Ver más opiniones
-
-					</a>
-
-				</div>
-
-			</section>
-
-
-
-			<!-- =========================================================
-						CONSULTA PSICOLOGÍA
-						HIDDEN UNTIL BUTTON CLICKED
-			========================================================= -->
-
-			<section
-				class="about section"
-				id="consulta"
-				aria-label="Formulario de consulta psicológica"
-			>
-
-				<h2 class="section-title">
-					Consulta Psicología
-				</h2>
-
-
-				<div class="about__container container">
-
-
-					<div class="about__data">
-
-
-						<p class="about__description">
-
-							Gracias por tu interés en iniciar tu proceso
-							conmigo.
-
-						</p>
-
-
-						<p class="about__description">
-
-							Al rellenar este formulario, me permites
-							poner un poco en contexto qué necesitas y
-							puedo valorar si es posible coordinarnos
-							y si puedo ayudarte.
-
-						</p>
-
-
-						<p class="about__description">
-
-							En cuanto reciba tu consulta, no tardaré
-							en responderte.
-
-							<strong>
-								Toda la información que compartas aquí
-								es estrictamente confidencial y está
-								protegida por el secreto profesional.
-							</strong>
-
-						</p>
-
-
-						<form
-							class="consulta-form"
-							id="consulta-form"
-							onsubmit="enviarConsulta(event)"
-						>
-
-
-							<div class="consulta-field">
-
-								<label for="nombre">
-
-									Nombre y Apellidos *
-
-								</label>
-
-								<input
-									type="text"
-									id="nombre"
-									name="nombre"
-									required
-								/>
-
-							</div>
-
-
-
-							<div class="consulta-field">
-
-								<label for="email">
-
-									Email *
-
-								</label>
-
-								<input
-									type="email"
-									id="email"
-									name="email"
-									required
-								/>
-
-							</div>
-
-
-
-							<div class="consulta-field">
-
-								<label for="telefono">
-
-									Teléfono de contacto *
-
-								</label>
-
-								<input
-									type="tel"
-									id="telefono"
-									name="telefono"
-									required
-								/>
-
-							</div>
-
-
-
-							<div class="consulta-field">
-
-								<label for="motivo">
-
-									Motivo de consulta:
-									¿Cuál es la razón por la que
-									has decidido ir a terapia? *
-
-								</label>
-
-								<textarea
-									id="motivo"
-									name="motivo"
-									required
-								></textarea>
-
-							</div>
-
-
-
-							<div class="consulta-field">
-
-								<label for="dudas">
-
-									¿Tienes alguna duda o tema que
-									te preocupe respecto a iniciar
-									terapia?
-
-								</label>
-
-								<textarea
-									id="dudas"
-									name="dudas"
-								></textarea>
-
-							</div>
-
-
-
-							<div class="consulta-field">
-
-								<label for="franja">
-
-									¿Qué franja del día te va mejor
-									para las sesiones?
-
-								</label>
-
-								<select
-									id="franja"
-									name="franja"
-								>
-
-									<option value="">
-										Selecciona una opción
-									</option>
-
-									<option value="Mañanas">
-										Mañanas
-									</option>
-
-									<option value="Tardes">
-										Tardes
-									</option>
-
-									<option value="Mediodía">
-										Mediodía
-									</option>
-
-									<option value="Variable">
-										Variable
-									</option>
-
-								</select>
-
-							</div>
-
-
-
-							<label class="consulta-consent">
-
-								<input
-									type="checkbox"
-									required
-								/>
-
-								<span>
-
-									Acepto que estos datos se usarán
-									exclusivamente para que el
-									profesional se ponga en contacto
-									conmigo y agendar la sesión. *
-
-								</span>
-
-							</label>
-
-
-
-							<button
-								type="submit"
-								class="button"
-							>
-
-								Enviar consulta
-
-							</button>
-
-						</form>
-
-					</div>
-
-
-
-					<div class="about__info">
-
-						<h3 class="about__info-title">
-
-							¿Prefieres reservar directamente?
-
-						</h3>
-
-
-						<div class="about__info-data">
-
-							<i
-								class="bx bx-calendar about__info-icon"
-								aria-hidden="true"
-							></i>
-
-							<div>
-
-								<span class="about__info-subtitle">
-
-									Agenda online
-
-								</span>
-
-								<span class="about__info-subtitle-small">
-
-									Consulta disponibilidad y reserva tu sesión.
-
-								</span>
-
-							</div>
-
-						</div>
-
-
-						<a
-							href="https://company.eholo.health/en/centros/victoriarub%C3%ADpsic%C3%B3loga/vrubbon?fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAadM7MSNtq6C4DEFdwywlmlwale7effNWsDUBvfapMHGmob6nHmRRZfQk0CKPA_aem_ThUkLXpZ3jZBL1kVL4AcRw&utm_content=link_in_bio&utm_medium=social&utm_source=ig"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="button"
-						>
-
-							Reservar y pagar
-
-						</a>
-
-					</div>
-
-				</div>
-
-			</section>
-
-
-
-			<!-- =========================================================
-							CONTACT / CALL TO ACTION
-			========================================================= -->
-
-			<section
-				class="resources"
-				aria-label="Reserva tu primera consulta"
-			>
-
-				<div class="resources__container container">
-
-					<div class="resources__data">
-
-
-						<div class="resources__l-group">
-
-							<h2 class="resources__title">
-
-								¿Empezamos?
-
-							</h2>
-
-
-							<p class="resources__description">
-
-								Pedir ayuda no significa que tengas
-								que tenerlo todo claro. Podemos empezar
-								por entender qué está pasando y qué
-								necesitas en este momento.
-
-							</p>
-
-
-							<a
-								href="#consulta"
-								class="button button__light resources__button"
-								onclick="mostrarConsulta(event)"
-							>
-
-								Consulta Psicología
-
-							</a>
-
-						</div>
-
+					<div class="home__img">
 
 						<img
-							src="images/howareyoureally-unsplash.jpg"
-							alt="Bienestar psicológico"
-							class="resources__img"
-							loading="lazy"
+							src="images/victoria-rubi.png"
+							alt="Victoria Rubí Bonet, Psicóloga Sanitaria"
+							width="200"
+							height="200"
 						/>
 
 					</div>
 
-				</div>
+					<h1 class="home__title">
+						Victoria Rubí Bonet
+					</h1>
 
-			</section>
+					<p class="home__profession">
+						Psicóloga Sanitaria
+					</p>
 
-		</main>
-
-
-
-		<!-- =========================================================
-								FOOTER
-		========================================================= -->
-
-		<footer
-			class="footer"
-			id="contact"
-		>
-
-			<div class="footer__top">
-
-				<div class="footer__container container">
+					<p
+						class="home__profession"
+						style="max-width:650px;margin-left:auto;margin-right:auto;"
+					>
+						Te ayudo a que seas tú y no el miedo quien dirija tu vida
+					</p>
 
 
-					<div class="footer__col footer__col--contact">
+					<!-- ===== BIG PROFILE BADGES ===== -->
 
-						<h2 class="footer__title">
+					<div class="home__social home__social--badges">
 
-							Contacto
+						<a
+							href="https://www.instagram.com/victoriarubi.psicologa/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="professional-badge instagram-badge"
+						>
 
-						</h2>
+							<i class="bx bxl-instagram"></i>
 
+							<span>
+								Instagram
+							</span>
 
-						<p class="footer__text">
-
-							Si estás pensando en empezar terapia,
-							puedes enviarme una consulta para contarme
-							brevemente qué necesitas o reservar
-							directamente una sesión a través de la
-							agenda online.
-
-						</p>
-
-					</div>
-
-
-
-					<div class="footer__col footer__col--info">
-
-						<h3 class="footer__heading">
-
-							Profesional
-
-						</h3>
-
-						<p>
-
-							Victoria Rubí Bonet
-
-						</p>
-
-						<p>
-
-							Psicóloga General Sanitaria
-
-						</p>
-
-						<p>
-
-							Col. B-03752
-
-						</p>
-
-
-						<br />
+						</a>
 
 
 						<a
-							href="#consulta"
-							class="footer__link"
-							onclick="mostrarConsulta(event)"
+							href="https://www.mundopsicologos.com/procard/maria-victoria-rubi-bonet"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="professional-badge mundo-badge"
 						>
 
-							Consulta Psicología
+							<img
+								src="images/mundopsicologos-badge.png"
+								alt="MundoPsicologos"
+							/>
 
 						</a>
 
 					</div>
 
 
+					<!-- ===== LARGE CONTACT BUTTON ===== -->
 
-					<div class="footer__col footer__col--connect">
-
-						<h3 class="footer__heading">
-
-							Sígueme
-
-						</h3>
-
-
-						<div class="footer__social">
-
-							<a
-								href="https://www.instagram.com/victoriarubi.psicologa/"
-								target="_blank"
-								rel="noopener noreferrer"
-								class="footer__social-link"
-								aria-label="Instagram de Victoria Rubí"
-							>
-
-								<i
-									class="bx bxl-instagram"
-									aria-hidden="true"
-								></i>
-
-							</a>
-
-						</div>
-
-
-						<br />
-
+					<div class="home__contact-button">
 
 						<a
-							href="https://company.eholo.health/en/centros/victoriarub%C3%ADpsic%C3%B3loga/vrubbon?fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAadM7MSNtq6C4DEFdwywlmlwale7effNWsDUBvfapMHGmob6nHmRRZfQk0CKPA_aem_ThUkLXpZ3jZBL1kVL4AcRw&utm_content=link_in_bio&utm_medium=social&utm_source=ig"
-							target="_blank"
-							rel="noopener noreferrer"
-							class="footer__link"
+							href="#consulta"
+							class="button home__button home__button--large"
+							onclick="mostrarConsulta(event)"
 						>
-
-							Reservar cita
-
+							Consulta Psicología
 						</a>
 
 					</div>
@@ -2420,78 +411,1514 @@
 
 			</div>
 
+		</section>
 
 
-			<div class="footer__bottom">
+		<!-- =========================================================
+		     ABOUT
+		========================================================= -->
 
-				<div class="container">
+		<section class="about section" id="about">
 
-					<p class="footer__copy">
+			<h2 class="section-title">
+				Sobre mí
+			</h2>
 
-						&copy;
-						<span id="copyright-year"></span>
-						Victoria Rubí Bonet.
+			<div class="about__container container">
 
-						Todos los derechos reservados.
+				<div class="about__data">
 
+					<p class="about__description">
+						Soy <strong>Victoria Rubí Bonet</strong>,
+						Psicóloga General Sanitaria, colegiada
+						<strong>B-03752</strong>.
+					</p>
+
+					<p class="about__description">
+						Mi objetivo es acompañarte a entender lo que te está
+						ocurriendo y ayudarte a desarrollar herramientas que
+						te permitan relacionarte de otra manera con tus
+						pensamientos, emociones y experiencias.
+					</p>
+
+					<p class="about__description">
+						Trabajo principalmente desde la
+						<strong>Terapia Cognitivo Conductual (TCC)</strong>
+						y la
+						<strong>Terapia de Aceptación y Compromiso (ACT)</strong>,
+						integrando también formación específica en
+						<strong>trauma</strong>.
+					</p>
+
+					<p class="about__description">
+						En terapia buscaremos crear un espacio seguro,
+						cercano y libre de juicios en el que puedas
+						comprenderte mejor, afrontar aquello que hoy
+						te limita y avanzar hacia una vida más
+						alineada contigo.
+					</p>
+
+					<p class="about__description">
+						<strong>
+							El primer paso ya es el inicio del cambio.
+						</strong>
 					</p>
 
 				</div>
 
+
+				<div class="about__info">
+
+					<h3 class="about__info-title">
+						Información
+					</h3>
+
+					<div class="about__info-data">
+
+						<i class="bx bx-user about__info-icon"></i>
+
+						<span class="about__info-subtitle">
+							Victoria Rubí Bonet
+						</span>
+
+					</div>
+
+
+					<div class="about__info-data">
+
+						<i class="bx bxs-briefcase-alt about__info-icon"></i>
+
+						<div>
+							<span class="about__info-subtitle">
+								Psicóloga General Sanitaria
+							</span>
+
+							<span class="about__info-subtitle-small">
+								Psicología clínica y sanitaria
+							</span>
+						</div>
+
+					</div>
+
+
+					<div class="about__info-data">
+
+						<i class="bx bx-id-card about__info-icon"></i>
+
+						<ul class="about__info-list">
+
+							<li class="about__info-subtitle">
+								Col. B-03752
+							</li>
+
+							<li class="about__info-subtitle-small">
+								Colegio Oficial de Psicología
+							</li>
+
+						</ul>
+
+					</div>
+
+
+					<div class="about__info-data">
+
+						<i class="bx bx-brain about__info-icon"></i>
+
+						<ul class="about__info-list">
+
+							<li class="about__info-subtitle">
+								TCC · ACT · Trauma
+							</li>
+
+							<li class="about__info-subtitle-small">
+								Intervención basada en evidencia
+							</li>
+
+						</ul>
+
+					</div>
+
+
+					<div class="about__info-data">
+
+						<i class="bx bxl-instagram about__info-icon"></i>
+
+						<a
+							class="about__info-subtitle"
+							href="https://www.instagram.com/victoriarubi.psicologa/"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							@victoriarubi.psicologa
+						</a>
+
+					</div>
+
+				</div>
+
 			</div>
 
-		</footer>
+		</section>
 
+
+		<!-- ===== ORIGINAL IMAGE BREAK ===== -->
+
+		<div class="img-section">
+
+			<img
+				src="images/floral-pastel.webp"
+				alt=""
+				loading="lazy"
+			/>
+
+		</div>
 
 
 		<!-- =========================================================
-								ORIGINAL JS
+		     SPECIALTIES / ORIGINAL SAVANNA INFORMATION STYLE
 		========================================================= -->
 
-		<script src="js/main.js"></script>
+		<section class="special__approach section">
+
+			<div class="insurance-mode__group grid">
+
+				<div class="mode grid">
+
+					<h3 class="about__info-title">
+						Modalidad
+					</h3>
+
+					<div class="about__info-data">
+
+						<i class="bx bx-user about__info-icon"></i>
+
+						<ul>
+							<li class="about__info-subtitle">
+								Terapia individual
+							</li>
+
+							<li class="about__info-subtitle-small">
+								Adultos
+							</li>
+						</ul>
+
+					</div>
 
 
-		<!-- ===== EXTRA JS FOR CONSULTA BUTTON ===== -->
+					<div class="about__info-data">
 
-		<script>
+						<i class="bx bx-laptop about__info-icon"></i>
 
-			document.getElementById("copyright-year").textContent =
-				new Date().getFullYear();
+						<ul>
+							<li class="about__info-subtitle">
+								Sesiones
+							</li>
 
+							<li class="about__info-subtitle-small">
+								Consulta psicológica
+							</li>
 
-			function mostrarConsulta(event) {
+							<li class="about__info-subtitle-small">
+								Online según disponibilidad
+							</li>
+						</ul>
 
-				if (event) {
-					event.preventDefault();
-				}
+					</div>
 
-				const consulta =
-					document.getElementById("consulta");
+				</div>
 
-				consulta.classList.add("consulta-visible");
-
-				setTimeout(() => {
-
-					consulta.scrollIntoView({
-						behavior: "smooth",
-						block: "start"
-					});
-
-				}, 50);
-			}
+			</div>
 
 
-			function enviarConsulta(event) {
+			<h3 class="about__info-title">
+				Áreas de trabajo
+			</h3>
 
+			<div class="specialties__group grid">
+
+				<div class="spec-1 grid">
+
+					<div class="about__info-data">
+
+						<i class="bx bx-tired about__info-icon"></i>
+
+						<ul class="about__info-list">
+							<li class="about__info-subtitle">
+								Ansiedad
+							</li>
+							<li class="about__info-subtitle-small">
+								Miedos
+							</li>
+							<li class="about__info-subtitle-small">
+								Pánico
+							</li>
+							<li class="about__info-subtitle-small">
+								Fobias
+							</li>
+						</ul>
+
+					</div>
+
+
+					<div class="about__info-data">
+
+						<i class="bx bxs-brain about__info-icon"></i>
+
+						<ul class="about__info-list">
+							<li class="about__info-subtitle">
+								TOC
+							</li>
+							<li class="about__info-subtitle-small">
+								Pensamientos obsesivos
+							</li>
+							<li class="about__info-subtitle-small">
+								Conductas compulsivas
+							</li>
+						</ul>
+
+					</div>
+
+
+					<div class="about__info-data">
+
+						<i class="bx bx-shield-quarter about__info-icon"></i>
+
+						<ul class="about__info-list">
+							<li class="about__info-subtitle">
+								Trauma
+							</li>
+							<li class="about__info-subtitle-small">
+								Procesamiento emocional
+							</li>
+							<li class="about__info-subtitle-small">
+								EMDR
+							</li>
+						</ul>
+
+					</div>
+
+				</div>
+
+
+				<div class="spec-2 grid">
+
+					<div class="about__info-data">
+
+						<i class="bx bx-heart-circle about__info-icon"></i>
+
+						<ul class="about__info-list">
+							<li class="about__info-subtitle">
+								Gestión emocional
+							</li>
+							<li class="about__info-subtitle-small">
+								Regulación emocional
+							</li>
+							<li class="about__info-subtitle-small">
+								Autoestima
+							</li>
+							<li class="about__info-subtitle-small">
+								Relaciones
+							</li>
+						</ul>
+
+					</div>
+
+
+					<div class="about__info-data">
+
+						<i class="bx bx-conversation about__info-icon"></i>
+
+						<ul class="about__info-list">
+							<li class="about__info-subtitle">
+								Habilidades sociales
+							</li>
+							<li class="about__info-subtitle-small">
+								Comunicación
+							</li>
+							<li class="about__info-subtitle-small">
+								Límites
+							</li>
+						</ul>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<h3 class="about__info-title">
+				Enfoque terapéutico
+			</h3>
+
+			<div class="approach__group grid">
+
+				<div class="about__info-data">
+
+					<i class="bx bx-universal-access about__info-icon"></i>
+
+					<ul class="about__info-list">
+						<li class="about__info-subtitle">
+							Terapia Cognitivo Conductual
+						</li>
+						<li class="about__info-subtitle-small">
+							TCC
+						</li>
+					</ul>
+
+				</div>
+
+
+				<div class="about__info-data">
+
+					<i class="bx bx-leaf about__info-icon"></i>
+
+					<ul class="about__info-list">
+						<li class="about__info-subtitle">
+							Aceptación y Compromiso
+						</li>
+						<li class="about__info-subtitle-small">
+							ACT
+						</li>
+					</ul>
+
+				</div>
+
+
+				<div class="about__info-data">
+
+					<i class="bx bx-band-aid about__info-icon"></i>
+
+					<ul class="about__info-list">
+						<li class="about__info-subtitle">
+							Trauma
+						</li>
+					</ul>
+
+				</div>
+
+
+				<div class="about__info-data">
+
+					<i class="bx bx-heart about__info-icon"></i>
+
+					<ul class="about__info-list">
+						<li class="about__info-subtitle">
+							Acompañamiento cercano
+						</li>
+					</ul>
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<!-- ===== ORIGINAL IMAGE DIVIDER ===== -->
+
+		<div class="img-section">
+
+			<img
+				src="images/lesly-juarez-DFtjXYd5Pto-unsplash.jpg"
+				alt=""
+				loading="lazy"
+			/>
+
+		</div>
+
+
+		<!-- =========================================================
+		     FORMACION — ORIGINAL TIMELINE DESIGN
+		========================================================= -->
+
+		<section class="experience section" id="experience">
+
+			<div class="exp__container grid">
+
+				<h2 class="section-title">
+					Títulos universitarios
+				</h2>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Grado
+						</h3>
+
+						<span class="exp__organization">
+							Universitat Oberta de Catalunya
+						</span>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+						<span class="exp__line"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Grado en Psicología
+						</h3>
+
+						<span class="exp__specialty">
+							Mención en Psicología de la Salud
+						</span>
+
+						<span class="exp__specialty">
+							Mención en Evaluación e Intervención Clínica
+						</span>
+					</div>
+
+				</div>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Máster
+						</h3>
+
+						<span class="exp__organization">
+							Universitat Internacional Valenciana
+						</span>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+						<span class="exp__line"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Psicología General Sanitaria
+						</h3>
+					</div>
+
+				</div>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Experto Universitario
+						</h3>
+
+						<span class="exp__organization">
+							Universidad Internacional de La Rioja
+						</span>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+						<span class="exp__line"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Trauma y EMDR
+						</h3>
+					</div>
+
+				</div>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Diploma
+						</h3>
+
+						<span class="exp__organization">
+							Escuela Nacional de Sanidad
+						</span>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+						<span class="exp__line"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Diploma en Sanidad
+						</h3>
+
+						<span class="exp__specialty">
+							Instituto de Salud Carlos III
+						</span>
+					</div>
+
+				</div>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Licenciatura
+						</h3>
+
+						<span class="exp__organization">
+							Universidad de Navarra
+						</span>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Licenciatura en Farmacia
+						</h3>
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<!-- ===== OTHER TRAINING ===== -->
+
+			<div class="exp__container grid">
+
+				<h2 class="section-title">
+					Otras formaciones
+				</h2>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Formación continua
+						</h3>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+						<span class="exp__line"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Miedo, pánico y fobias
+						</h3>
+
+						<span class="exp__specialty">
+							Terapia breve estratégica de Giorgio Nardone (UOC)
+						</span>
+					</div>
+
+				</div>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Formación continua
+						</h3>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+						<span class="exp__line"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Entrenamiento emocional
+						</h3>
+
+						<span class="exp__specialty">
+							Inteligencia emocional (UOC)
+						</span>
+					</div>
+
+				</div>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Formación
+						</h3>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+						<span class="exp__line"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Habilidades sociales
+						</h3>
+					</div>
+
+				</div>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Formación
+						</h3>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+						<span class="exp__line"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Tratamiento del trastorno obsesivo-compulsivo
+						</h3>
+					</div>
+
+				</div>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Formación
+						</h3>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+						<span class="exp__line"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Modelo PARCUVE
+						</h3>
+
+						<span class="exp__specialty">
+							Tratamiento del trauma
+						</span>
+					</div>
+
+				</div>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Formación
+						</h3>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+						<span class="exp__line"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Terapia de Esquemas
+						</h3>
+					</div>
+
+				</div>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Formación
+						</h3>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+						<span class="exp__line"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Terapia Dialéctica Conductual
+						</h3>
+					</div>
+
+				</div>
+
+
+				<div class="exp__content">
+
+					<div>
+						<h3 class="exp__year">
+							Formación
+						</h3>
+					</div>
+
+					<div class="exp__time">
+						<span class="exp__rounder"></span>
+					</div>
+
+					<div>
+						<h3 class="exp__position">
+							Terapia Cognitiva
+						</h3>
+
+						<span class="exp__specialty">
+							Formación y actualización continua
+						</span>
+					</div>
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<!-- =========================================================
+		     TERAPIA — EXPANDABLE ORIGINAL-STYLE CARDS
+		========================================================= -->
+
+		<section class="services section" id="services">
+
+			<h2 class="section-title">
+				Terapia
+			</h2>
+
+			<div class="services__container grid">
+
+
+				<div class="services__content">
+
+					<div class="services__header">
+
+						<i class="bx bx-brain services__icon"></i>
+
+						<h3 class="services__title">
+							Terapia Cognitivo Conductual
+						</h3>
+
+					</div>
+
+					<div class="services__body">
+
+						<p class="services__description">
+							La Terapia Cognitivo Conductual (TCC) parte
+							de la relación entre nuestros pensamientos,
+							emociones y comportamientos.
+						</p>
+
+						<p class="services__description">
+							A través del proceso terapéutico podemos
+							identificar patrones que están generando
+							malestar y aprender nuevas estrategias para
+							relacionarnos con ellos de una forma más útil.
+						</p>
+
+					</div>
+
+					<button
+						class="services__toggle"
+						aria-expanded="false"
+					>
+						<i class="bx bx-chevron-down services__chevron"></i>
+					</button>
+
+				</div>
+
+
+				<div class="services__content">
+
+					<div class="services__header">
+
+						<i class="bx bx-leaf services__icon"></i>
+
+						<h3 class="services__title">
+							Terapia de Aceptación y Compromiso
+						</h3>
+
+					</div>
+
+					<div class="services__body">
+
+						<p class="services__description">
+							La Terapia de Aceptación y Compromiso (ACT)
+							busca ayudarte a construir una vida guiada
+							por aquello que de verdad es importante para ti.
+						</p>
+
+						<p class="services__description">
+							No se trata de eliminar todas las emociones
+							difíciles, sino de aprender a relacionarnos
+							con ellas sin permitir que sean quienes
+							decidan por nosotros.
+						</p>
+
+					</div>
+
+					<button
+						class="services__toggle"
+						aria-expanded="false"
+					>
+						<i class="bx bx-chevron-down services__chevron"></i>
+					</button>
+
+				</div>
+
+
+				<div class="services__content">
+
+					<div class="services__header">
+
+						<i class="bx bx-tired services__icon"></i>
+
+						<h3 class="services__title">
+							Ansiedad, miedo y pánico
+						</h3>
+
+					</div>
+
+					<div class="services__body">
+
+						<p class="services__description">
+							A veces intentamos evitar tanto el miedo que
+							acaba teniendo cada vez más espacio en nuestra vida.
+						</p>
+
+						<p class="services__description">
+							En terapia trabajaremos para comprender qué
+							está manteniendo la ansiedad y recuperar
+							progresivamente la capacidad de decidir
+							cómo quieres vivir.
+						</p>
+
+					</div>
+
+					<button
+						class="services__toggle"
+						aria-expanded="false"
+					>
+						<i class="bx bx-chevron-down services__chevron"></i>
+					</button>
+
+				</div>
+
+
+				<div class="services__content">
+
+					<div class="services__header">
+
+						<i class="bx bx-band-aid services__icon"></i>
+
+						<h3 class="services__title">
+							Trauma
+						</h3>
+
+					</div>
+
+					<div class="services__body">
+
+						<p class="services__description">
+							Algunas experiencias dejan una huella que
+							continúa influyendo en cómo nos sentimos,
+							reaccionamos o nos relacionamos en el presente.
+						</p>
+
+						<p class="services__description">
+							El trabajo terapéutico permite abordar estas
+							experiencias de forma progresiva, segura y
+							adaptada a cada persona.
+						</p>
+
+					</div>
+
+					<button
+						class="services__toggle"
+						aria-expanded="false"
+					>
+						<i class="bx bx-chevron-down services__chevron"></i>
+					</button>
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<!-- ===== IMAGE BREAK ===== -->
+
+		<div class="img-section">
+
+			<img
+				src="images/floral-pastel.webp"
+				alt=""
+				loading="lazy"
+			/>
+
+		</div>
+
+
+		<!-- =========================================================
+		     OPINIONES
+		========================================================= -->
+
+		<section class="services section" id="opiniones">
+
+			<h2 class="section-title">
+				Opiniones
+			</h2>
+
+			<div class="services__container grid">
+
+
+				<div class="services__content">
+
+					<div class="services__header">
+
+						<i class="bx bx-message-rounded-dots services__icon"></i>
+
+						<h3 class="services__title">
+							Pau
+						</h3>
+
+					</div>
+
+					<div class="services__body">
+
+						<p class="review__stars">
+							★★★★★
+						</p>
+
+						<p class="review__verified">
+							Paciente verificado
+						</p>
+
+						<p class="services__description">
+							“Victoria me ha ayudado enormemente a afrontar
+							una situación familiar muy difícil. Estoy muy
+							agradecido por su trato y profesionalidad.
+							Una gran profesional.”
+						</p>
+
+						<p class="review__date">
+							26 agosto 2026
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="services__content">
+
+					<div class="services__header">
+
+						<i class="bx bx-message-rounded-dots services__icon"></i>
+
+						<h3 class="services__title">
+							Lola
+						</h3>
+
+					</div>
+
+					<div class="services__body">
+
+						<p class="review__stars">
+							★★★★★
+						</p>
+
+						<p class="review__verified">
+							Paciente verificado
+						</p>
+
+						<p class="services__description">
+							“Victoria es una gran psicóloga. Desde el día 0
+							conecté con ella y ha sabido acompañarme a lo
+							largo de todo el camino de mi tratamiento.
+							Sin duda una gran profesional.”
+						</p>
+
+						<p class="review__date">
+							21 agosto 2026
+						</p>
+
+					</div>
+
+				</div>
+
+
+				<div class="services__content">
+
+					<div class="services__header">
+
+						<i class="bx bx-message-rounded-dots services__icon"></i>
+
+						<h3 class="services__title">
+							Ignacio
+						</h3>
+
+					</div>
+
+					<div class="services__body">
+
+						<p class="review__stars">
+							★★★★★
+						</p>
+
+						<p class="review__verified">
+							Paciente verificado
+						</p>
+
+						<p class="services__description">
+							“Victoria es una gran profesional, cercana,
+							cálida y muy fácil de tratar. Me ha ayudado
+							mucho y desde el primer momento transmite
+							confianza y te hace sentir escuchado y acompañado.”
+						</p>
+
+						<p class="review__date">
+							21 agosto 2026
+						</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<div class="booking-box">
+
+				<a
+					href="https://www.mundopsicologos.com/procard/maria-victoria-rubi-bonet"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="button"
+				>
+					Ver más opiniones
+				</a>
+
+			</div>
+
+		</section>
+
+
+		<!-- =========================================================
+		     CONSULTA
+		========================================================= -->
+
+		<section class="about section" id="consulta">
+
+			<h2 class="section-title">
+				Consulta Psicología
+			</h2>
+
+			<div class="about__container container">
+
+				<div class="about__data">
+
+					<p class="about__description">
+						Gracias por tu interés en iniciar tu proceso conmigo.
+					</p>
+
+					<p class="about__description">
+						Al rellenar este formulario, me permites poner un
+						poco en contexto qué necesitas y puedo valorar si
+						es posible coordinarnos y si puedo ayudarte.
+					</p>
+
+					<p class="about__description">
+						En cuanto reciba tu consulta, no tardaré en responderte.
+						<strong>
+							Toda la información que compartas aquí es
+							estrictamente confidencial y está protegida
+							por el secreto profesional.
+						</strong>
+					</p>
+
+
+					<form
+						class="consulta-form"
+						id="consulta-form"
+						onsubmit="enviarConsulta(event)"
+					>
+
+						<div class="consulta-field">
+							<label for="nombre">
+								Nombre y Apellidos *
+							</label>
+
+							<input
+								type="text"
+								id="nombre"
+								name="nombre"
+								required
+							/>
+						</div>
+
+
+						<div class="consulta-field">
+							<label for="email">
+								Email *
+							</label>
+
+							<input
+								type="email"
+								id="email"
+								name="email"
+								required
+							/>
+						</div>
+
+
+						<div class="consulta-field">
+							<label for="telefono">
+								Teléfono de contacto *
+							</label>
+
+							<input
+								type="tel"
+								id="telefono"
+								name="telefono"
+								required
+							/>
+						</div>
+
+
+						<div class="consulta-field">
+							<label for="motivo">
+								Motivo de consulta: ¿Cuál es la razón
+								por la que has decidido ir a terapia? *
+							</label>
+
+							<textarea
+								id="motivo"
+								name="motivo"
+								required
+							></textarea>
+						</div>
+
+
+						<div class="consulta-field">
+							<label for="dudas">
+								¿Tienes alguna duda o tema que te preocupe
+								respecto a iniciar terapia?
+							</label>
+
+							<textarea
+								id="dudas"
+								name="dudas"
+							></textarea>
+						</div>
+
+
+						<div class="consulta-field">
+
+							<label for="franja">
+								¿Qué franja del día te va mejor para las sesiones?
+							</label>
+
+							<select id="franja" name="franja">
+
+								<option value="">
+									Selecciona una opción
+								</option>
+
+								<option value="Mañanas">
+									Mañanas
+								</option>
+
+								<option value="Tardes">
+									Tardes
+								</option>
+
+								<option value="Mediodía">
+									Mediodía
+								</option>
+
+								<option value="Variable">
+									Variable
+								</option>
+
+							</select>
+
+						</div>
+
+
+						<label class="consulta-consent">
+
+							<input type="checkbox" required />
+
+							<span>
+								Sí, acepto que estos datos se usarán
+								exclusivamente para que el profesional
+								se ponga en contacto conmigo y agendar
+								la sesión. *
+							</span>
+
+						</label>
+
+
+						<button type="submit" class="button">
+							Enviar consulta
+						</button>
+
+					</form>
+
+				</div>
+
+
+				<div class="about__info">
+
+					<h3 class="about__info-title">
+						¿Prefieres reservar directamente?
+					</h3>
+
+					<div class="about__info-data">
+
+						<i class="bx bx-calendar about__info-icon"></i>
+
+						<div>
+
+							<span class="about__info-subtitle">
+								Agenda online
+							</span>
+
+							<span class="about__info-subtitle-small">
+								Consulta disponibilidad y reserva tu sesión.
+							</span>
+
+						</div>
+
+					</div>
+
+
+					<a
+						href="https://company.eholo.health/en/centros/victoriarub%C3%ADpsic%C3%B3loga/vrubbon?fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAadM7MSNtq6C4DEFdwywlmlwale7effNWsDUBvfapMHGmob6nHmRRZfQk0CKPA_aem_ThUkLXpZ3jZBL1kVL4AcRw&utm_content=link_in_bio&utm_medium=social&utm_source=ig"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="button"
+					>
+						Reservar y pagar
+					</a>
+
+				</div>
+
+			</div>
+
+		</section>
+
+
+		<!-- =========================================================
+		     ORIGINAL SAVANNA-STYLE CTA
+		========================================================= -->
+
+		<section class="resources">
+
+			<div class="resources__container container">
+
+				<div class="resources__data">
+
+					<div class="resources__l-group">
+
+						<h2 class="resources__title">
+							¿Empezamos?
+						</h2>
+
+						<p class="resources__description">
+							Pedir ayuda no significa que tengas que tenerlo
+							todo claro. Podemos empezar por entender qué
+							está pasando y qué necesitas en este momento.
+						</p>
+
+						<a
+							href="#consulta"
+							class="button button__light resources__button"
+							onclick="mostrarConsulta(event)"
+						>
+							Consulta Psicología
+						</a>
+
+					</div>
+
+					<img
+						src="images/howareyoureally-unsplash.jpg"
+						alt=""
+						class="resources__img"
+						loading="lazy"
+					/>
+
+				</div>
+
+			</div>
+
+		</section>
+
+	</main>
+
+
+	<!-- =========================================================
+	     FOOTER
+	========================================================= -->
+
+	<footer class="footer" id="contact">
+
+		<div class="footer__top">
+
+			<div class="footer__container container">
+
+				<div class="footer__col footer__col--contact">
+
+					<h2 class="footer__title">
+						Contacto
+					</h2>
+
+					<p class="footer__text">
+						Si estás pensando en empezar terapia, puedes
+						enviarme una consulta para contarme brevemente
+						qué necesitas o reservar directamente una
+						sesión a través de la agenda online.
+					</p>
+
+				</div>
+
+
+				<div class="footer__col footer__col--info">
+
+					<h3 class="footer__heading">
+						Profesional
+					</h3>
+
+					<p>Victoria Rubí Bonet</p>
+					<p>Psicóloga General Sanitaria</p>
+					<p>Col. B-03752</p>
+
+					<br />
+
+					<a
+						href="#consulta"
+						class="footer__link"
+						onclick="mostrarConsulta(event)"
+					>
+						Consulta Psicología
+					</a>
+
+				</div>
+
+
+				<div class="footer__col footer__col--connect">
+
+					<h3 class="footer__heading">
+						Sígueme
+					</h3>
+
+					<div class="footer__social">
+
+						<a
+							href="https://www.instagram.com/victoriarubi.psicologa/"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="footer__social-link"
+							aria-label="Instagram"
+						>
+							<i class="bx bxl-instagram"></i>
+						</a>
+
+					</div>
+
+					<br />
+
+					<a
+						href="https://company.eholo.health/en/centros/victoriarub%C3%ADpsic%C3%B3loga/vrubbon?fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAadM7MSNtq6C4DEFdwywlmlwale7effNWsDUBvfapMHGmob6nHmRRZfQk0CKPA_aem_ThUkLXpZ3jZBL1kVL4AcRw&utm_content=link_in_bio&utm_medium=social&utm_source=ig"
+						target="_blank"
+						rel="noopener noreferrer"
+						class="footer__link"
+					>
+						Reservar cita
+					</a>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="footer__bottom">
+
+			<div class="container">
+
+				<p class="footer__copy">
+					&copy;
+					<span id="copyright-year"></span>
+					Victoria Rubí Bonet.
+					Todos los derechos reservados.
+				</p>
+
+			</div>
+
+		</div>
+
+	</footer>
+
+
+	<!-- ===== KEEP SAVANNA'S ORIGINAL JS ===== -->
+	<script src="js/main.js"></script>
+
+
+	<script>
+
+		document.getElementById("copyright-year").textContent =
+			new Date().getFullYear();
+
+
+		function mostrarConsulta(event) {
+
+			if (event) {
 				event.preventDefault();
-
-				alert(
-					"Formulario preparado. Falta conectar el envío al correo profesional de Victoria."
-				);
-
 			}
 
-		</script>
+			const consulta =
+				document.getElementById("consulta");
 
-	</body>
+			consulta.classList.add("consulta-visible");
+
+			setTimeout(function () {
+
+				consulta.scrollIntoView({
+					behavior: "smooth",
+					block: "start"
+				});
+
+			}, 50);
+		}
+
+
+		function enviarConsulta(event) {
+
+			event.preventDefault();
+
+			alert(
+				"Formulario preparado. Falta conectar el envío al correo profesional de Victoria."
+			);
+
+		}
+
+	</script>
+
+</body>
 </html>
