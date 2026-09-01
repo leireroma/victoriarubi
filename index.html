@@ -425,6 +425,172 @@
 			}
 
 		}
+	/* =========================================================
+   FORCE OPINIONS TO STAY FULLY OPEN
+========================================================= */
+
+#opiniones .services__container {
+	display: grid !important;
+	grid-template-columns: repeat(3, 1fr) !important;
+	gap: 2rem !important;
+	align-items: stretch !important;
+}
+
+
+/* Turn each review into a full white card */
+
+#opiniones .services__content {
+	background: #ffffff !important;
+	border-radius: 0 !important;
+	padding: 2.5rem !important;
+	box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08) !important;
+	border: 1px solid rgba(90, 95, 55, 0.12) !important;
+
+	height: auto !important;
+	min-height: 360px !important;
+
+	overflow: visible !important;
+
+	display: flex !important;
+	flex-direction: column !important;
+}
+
+
+/* REMOVE THE GREEN BAR STYLE */
+
+#opiniones .services__header {
+	background: transparent !important;
+	color: var(--title-color) !important;
+
+	padding: 0 !important;
+	margin: 0 0 1rem 0 !important;
+
+	border-radius: 0 !important;
+
+	display: flex !important;
+	align-items: center !important;
+	gap: 1rem !important;
+}
+
+
+/* Name */
+
+#opiniones .services__title {
+	color: var(--title-color) !important;
+	font-size: 1.5rem !important;
+	font-weight: 700 !important;
+}
+
+
+/* Speech bubble */
+
+#opiniones .services__icon {
+	color: var(--first-color) !important;
+	font-size: 2.2rem !important;
+}
+
+
+/* THIS IS THE IMPORTANT PART:
+   force the hidden review text to display */
+
+#opiniones .services__body {
+	display: block !important;
+
+	height: auto !important;
+	max-height: none !important;
+
+	opacity: 1 !important;
+	visibility: visible !important;
+
+	overflow: visible !important;
+
+	transform: none !important;
+
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+
+/* Review text */
+
+#opiniones .services__description {
+	display: block !important;
+
+	color: var(--text-color) !important;
+
+	font-size: 1.05rem !important;
+	line-height: 1.8 !important;
+
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+
+/* Stars */
+
+#opiniones .review__stars {
+	display: block !important;
+
+	color: #c9d900 !important;
+
+	font-size: 1.3rem !important;
+	letter-spacing: 0.08rem !important;
+
+	margin: 0 0 1rem 0 !important;
+}
+
+
+/* Verified */
+
+#opiniones .review__verified {
+	display: block !important;
+
+	color: var(--text-color) !important;
+
+	font-size: 0.9rem !important;
+
+	opacity: 0.7 !important;
+
+	margin-bottom: 1rem !important;
+}
+
+
+/* Date */
+
+#opiniones .review__date {
+	display: block !important;
+
+	color: var(--text-color) !important;
+
+	font-size: 0.85rem !important;
+
+	opacity: 0.65 !important;
+
+	margin-top: 1.5rem !important;
+}
+
+
+/* If a dropdown arrow exists, hide it */
+
+#opiniones .services__toggle,
+#opiniones .services__chevron {
+	display: none !important;
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 968px) {
+
+	#opiniones .services__container {
+		grid-template-columns: 1fr !important;
+	}
+
+	#opiniones .services__content {
+		min-height: auto !important;
+	}
+
+}	
 
 	</style>
 
